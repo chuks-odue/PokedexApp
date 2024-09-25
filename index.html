@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="shortcut icon" href="image/newOne.png" type="image/x-icon">
+    <link rel="stylesheet" href="./Styles/main.css">
+    <link rel="stylesheet" href="./Styles/pokemonCard.css">
+    <link rel="stylesheet" href="./Styles/Overlay.css">
+    <script src="json.js"></script>
+    <script src="script.js"></script>
+    <script src="Template.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="init()">
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Pokémon </h1>               
+                <div class="search-container"> <span>search</span>
+                  <input type="text"  id="search-input" placeholder="Search Pokémon by name..."
+                   oninput="searchPokemon()">                   
+                </div>  
+                            
+            </div>   
+            <img src="image/pokemon-6895600_1280.png" alt="search-icon">        
+        </nav>
+         
+    </header>
+    <div id="additional-details" style="display:none;"></div>
+    <div id="overlay">
+        <div id="overlay-content">
+            <span id="overlay-close" onclick="closeOverlay()"></span>            
+        </div>
+    </div>        
+    <div id="pokemon-container" class="pokemon-container"></div>
+    <button id="load-more-btn" class="load-more-btn" onclick="loadMore()">Load More Pokémon</button>
+    <div id="spinner-container">
+        <div class="ball">
+            <img id="spinner" src="image/pokemon-1673770_1280.png" alt="Loading">
+        </div>
+        <button class="buttonload">
+            <i class="fa fa-refresh fa-spin"></i>Loading
+          </button>
+
+    </div>
+    <div id="butt" onclick="closeOverlay()"></div>
+  
+    
+</body>
+</html>

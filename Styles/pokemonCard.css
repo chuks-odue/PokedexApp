@@ -1,0 +1,147 @@
+#pokemon-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pokemon-card {
+    border: 1px solid #ddd;
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    width: 240px;
+    margin: 10px;
+    max-height: 240px; 
+    padding: 10px;
+    position: relative; 
+    overflow: hidden; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+    opacity: 1;
+    background: #fff; 
+    cursor: pointer; 
+}
+
+.pokemon-card h3{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #4d2381;
+    color: white!important;
+    border-radius: 40px;
+    font-size: 18px;
+    margin: 0;
+}
+.pokemon-card img {
+    width: 140px;
+    height: 140px;
+    display: block;
+    margin: 8;
+}
+.pokemon-number {
+    font-size: 16px;
+    font-weight: bold;
+    color: #140e00;
+    position: absolute;    
+    left: 10px;     
+    width: 100%;    
+}
+.pokemon-type {
+    display: inline-block;
+    background-color:#FF6F61;
+    color: white;
+    border-radius: 12px;
+    padding: 4px 8px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+.pokemon-types {
+    margin-top: 5px; 
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.mini-card {
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 8px;
+    transition: background-color 0.3s ease-in-out; 
+}
+.pokemon-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+.pokemon-basic-details {
+    font-size: 14px;
+    background-color:whitesmoke;    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0%;
+    width: 100%;
+    cursor: pointer;    
+}
+.pokemon-details {
+    top: 10;
+    left: 100;
+    width: 100%;
+    background-color: rgba(116, 44, 44, 0.95); 
+    z-index: 1000; 
+}
+.card-image-background {    
+    padding: 5px; 
+    display: inline-block; 
+    border-radius: 8px;
+}
+#additional-details {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
+}
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
