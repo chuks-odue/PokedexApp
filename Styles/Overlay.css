@@ -104,9 +104,8 @@ button:active {
 
 @media (max-width: 480px) {
     .overlay-card {
-        width: 60vw;
-        height: 60vh; 
-        border-radius: 0; 
+        
+        width:70% ;
     }
     .overlay-content img {
         width: 200px; 
@@ -121,6 +120,12 @@ button:active {
         padding: 6px 10px;
     }
 }@media (max-width: 380px) {
+    .overlay-card {
+        position: fixed;
+        top: 60%;
+        left: 50%;
+        
+    }
     
     .left-arrow{    
         position: absolute;
