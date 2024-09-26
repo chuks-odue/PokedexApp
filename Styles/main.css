@@ -150,3 +150,9 @@ animation: roll 1s linear infinite;
    
   }
 }
+@media (max-width: 380px){
+  header img {
+    display: none;
+  }
+
+}

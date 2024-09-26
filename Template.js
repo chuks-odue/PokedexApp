@@ -43,8 +43,7 @@ function generateShowPokemonDetails(pokemonData,pokemonId){
             <p>Base Experience: ${pokemonData.base_experience}</p>
             <p>Abilities: ${pokemonData.abilities.map(ability => ability.ability.name).join(', ')}</p>
             <button onclick="showDamageRelations(${pokemonId})">Damage Relations</button>
-            <button onclick="showEvolutionChain(${pokemonId})">Evolution Chain</button>
-            
+            <button onclick="showEvolutionChain(${pokemonId})">Evolution Chain</button>            
         </div>
     `;
 }
@@ -69,22 +68,17 @@ function formatDamageRelations(damageRelations) {
     return ` 
         <div class="damage-relations">
             <h4>Double Damage From:</h4>
-            <p>${damageRelations.double_damage_from?.map(type => type.name).join(', ') || 'None'}</p>
-            
+            <p>${damageRelations.double_damage_from?.map(type => type.name).join(', ') || 'None'}</p>            
             <h4>Half Damage From:</h4>
-            <p>${damageRelations.half_damage_from?.map(type => type.name).join(', ') || 'None'}</p>
-            
+            <p>${damageRelations.half_damage_from?.map(type => type.name).join(', ') || 'None'}</p>            
             <h4>No Damage From:</h4>
             <p>${damageRelations.no_damage_from?.map(type => type.name).join(', ') || 'None'}</p>
-
             <h4>Double Damage To:</h4>
             <p>${damageRelations.double_damage_to?.map(type => type.name).join(', ') || 'None'}</p>
             <h4>Half Damage To:</h4>
-                    <p>${damageRelations.half_damage_to?.map(type => type.name).join(', ') || 'None'}</p>
-
-                    <h4>No Damage To:</h4>
-                    <p>${damageRelations.no_damage_to?.map(type => type.name).join(', ') || 'None'}</p>
-                </div>
+            <p>${damageRelations.half_damage_to?.map(type => type.name).join(', ') || 'None'}</p>
+            <h4>No Damage To:</h4>
+            <p>${damageRelations.no_damage_to?.map(type => type.name).join(', ') || 'None'}</p>        
         </div>
     `;
 }
@@ -95,18 +89,15 @@ function createDamageRelationsHTML(damageRelationsArray) {
     }
     return damageRelationsHTML;
 }
-
 function renderDamageRelations(damageRelationsHTML) {
     const damageRelationsDiv = document.createElement('div');
     damageRelationsDiv.classList.add('damage-relations-container');
     damageRelationsDiv.innerHTML = `
         <h3>Damage Relations:</h3>
         ${damageRelationsHTML}
-        <button id="butt" onclick="closeOverlay()">Close</button>
-    `;
-
+        <button id="butt" onclick="closeOverlay()">Close</button>  `;
     const overlayContent = document.querySelector('.overlay-content');
-    overlayContent.innerHTML = ''; // Clear previous content
+    overlayContent.innerHTML = ''; 
     overlayContent.appendChild(damageRelationsDiv);
 }
 function getEvolutionChainTemplate(evolutions) {
@@ -123,9 +114,32 @@ function getEvolutionChainTemplate(evolutions) {
     `;
 }
 function disableScroll() {
-    document.body.style.overflow = 'hidden'; // Disable scrolling
+    document.body.style.overflow = 'hidden'; 
 }
-
 function enableScroll() {
-    document.body.style.overflow = ''; // Enable scrolling
+    document.body.style.overflow = ''; 
+}
+function showSpinner() {
+    const spinnerContainer = document.getElementById('spinner-container');
+    spinnerContainer.style.display = 'flex'; 
+}
+function hideSpinner() {
+    const spinnerContainer = document.getElementById('spinner-container');
+    spinnerContainer.style.display = 'none'; 
+}
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+function getRandomColor() {
+    const colors = ['#f4e8c1', '#ffcccb', '#c1e1f4', '#c1f4c5', '#f4c1f0', 
+        '#f5b7b1', '#aed6f1', '#a9dfbf', '#fad7a0', '#e8daef',
+        '#d6eaf8', '#f9e79f', '#d5f5e3', '#fcf3cf', '#f6ddcc',
+        '#e6b0aa', '#abebc6', '#d7bde2', '#f8c471', '#f5cba7'];
+       
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+function loadMore() {
+    if (!loading) {
+        getPokemonData(); 
+    }
 }
